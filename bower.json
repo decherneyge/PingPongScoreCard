@@ -1,0 +1,30 @@
+{
+  "name": "pingpongscorecard",
+  "description": "a simple ping pong score tracking app",
+  "main": "index.js",
+  "authors": [
+    "George DeCherney"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "pingpong",
+    "table",
+    "tennis",
+    "score"
+  ],
+  "homepage": "https://github.com/decherneyge/PingPongScoreCard",
+  "moduleType": [],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.8",
+    "angular-ui-router": "~0.2.15",
+    "bootstrap": "~3.3.6",
+    "jquery": "~2.1.4"
+  }
+}
