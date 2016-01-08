@@ -1,0 +1,11 @@
+header{
+    min-height: 70px;
+}
+
+#CurrentGameContainer .well{
+    min-height: 350px;
+}
+
+#GameTypes li:not(.selected) .label{
+    display:none !important;
+}

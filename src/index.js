@@ -2,7 +2,12 @@
  * Created by gdecherney on 1/7/2016.
  */
 
-var app = angular.module("pingpongscorecard", ["firebase",'ui.router']);
+var app = angular.module("pingpongscorecard", [
+    "firebase",
+    'ui.router',
+    //app components
+    'pingpongscorecard.root'
+]);
 
 app.config(function($stateProvider, $urlRouterProvider) {
     //
@@ -12,6 +17,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     // Now set up the states
     $stateProvider
         .state('home', {
+            parent:'root',
             url: "/home",
             templateUrl: "app/partials/home.html",
             controller: 'HomeController',
