@@ -4,6 +4,8 @@
   "description": "a simple ping pong score tracking app",
   "main": "index.js",
   "scripts": {
+    "setup" : "npm install && bower install",
+    "start": "http-server ./ -p 8000 -c-1",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
