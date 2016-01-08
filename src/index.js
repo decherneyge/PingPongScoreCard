@@ -14,14 +14,15 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state('home', {
             url: "/home",
             templateUrl: "app/partials/home.html",
-            controller: 'HomeController'
+            controller: 'HomeController',
+            controllerAs: 'homeCtrl'
         });
 
 });
 
 app.run(function(settings){
     //init settings
-    settings.set('FirebaseAppName', 'pingpongscorecard');
+    settings.set('FirebaseUrl', "https://pingpongscorecard.firebaseio.com");
 });
 
 app.factory('settings', function() {
@@ -36,4 +37,19 @@ app.factory('settings', function() {
     };
 
     return settingsService;
+});
+
+app.factory('fbase', function(settings) {
+
+    var fbaseService = {};
+
+    fbaseService.url = function(key) {
+        return settings.list().FirebaseUrl +'/' + key;
+    };
+
+    fbaseService.ref = function(key) {
+        return new Firebase(fbaseService.url(key));
+    };
+
+    return fbaseService;
 });

@@ -17,3 +17,8 @@ Start an http server
 ```
 npm run start
 ```
+
+Start watch task
+```
+gulp watch
+```
