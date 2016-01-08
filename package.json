@@ -1,0 +1,32 @@
+{
+  "name": "pingpongscorecard",
+  "version": "1.0.0",
+  "description": "a simple ping pong score tracking app",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/decherneyge/PingPongScoreCard.git"
+  },
+  "keywords": [
+    "pingpong",
+    "table",
+    "tennis",
+    "score"
+  ],
+  "author": "George DeCherney",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/decherneyge/PingPongScoreCard/issues"
+  },
+  "homepage": "https://github.com/decherneyge/PingPongScoreCard#readme",
+  "devDependencies": {
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-concat": "^2.6.0",
+    "gulp-sequence": "^0.4.4",
+    "require-dir": "^0.3.0"
+  }
+}
