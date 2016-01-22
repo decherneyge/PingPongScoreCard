@@ -2,16 +2,21 @@
     <div class="col-sm-3">
         <div class="row">
             <div class="col-sm-12">
-                <button class="btn btn-danger" id="NewGame">New Game</button>
-                <button class="btn btn-link" id="ClearGame">Reset</button>
+                <input type="button" class="btn btn-danger" id="NewGame" ng-click="homeCtrl.startNewGame()"
+                       ng-disabled="this.currentGame!=null" value="New Game"/>
+                <button class="btn btn-link" id="ClearGame" ng-click="homeCtrl.resetScoreKeeper()">Reset</button>
             </div>
         </div>
         <hr/>
         <div class="row">
             <div class="col-sm-12">
                 <ul id="PlayersList" class="list-group">
-                    <li class="list-group-item active">Players <button class="btn btn-xs btn-default pull-right" id="AddPlayer"><i class="glyphicon glyphicon-plus"></i></button></li>
-                    <li class="list-group-item" ng-repeat="player in homeCtrl.players">
+                    <li class="list-group-item active">Players
+                        <button class="btn btn-xs btn-default pull-right" id="AddPlayer"><i
+                                class="glyphicon glyphicon-plus"></i></button>
+                    </li>
+                    <li class="list-group-item" ng-repeat="player in homeCtrl.players"
+                        ng-click="homeCtrl.selectPlayer(player)">
                         <p>{{player.name}}</p>
                     </li>
                 </ul>
@@ -21,31 +26,42 @@
             <div class="col-sm-12">
                 <ul id="GameTypes" class="list-group">
                     <li class="list-group-item active">Game Type</li>
-                    <li class="list-group-item selected">11pt  <span class="label label-success pull-right"><i class="glyphicon glyphicon-ok"></i></span></li>
-                    <li class="list-group-item">21pt  <span class="label label-success pull-right"><i class="glyphicon glyphicon-ok"></i></span></li>
+                    <li class="list-group-item selected">11pt <span class="label label-success pull-right"><i
+                            class="glyphicon glyphicon-ok"></i></span></li>
+                    <li class="list-group-item">21pt <span class="label label-success pull-right"><i
+                            class="glyphicon glyphicon-ok"></i></span></li>
                 </ul>
             </div>
         </div>
     </div>
     <div class="col-sm-9">
-        <div class="row" id="CurrentGameContainer">
-            <div class="col-sm-6">
-                <div class="well">
-                    <span class="label label-success pull-right">S</span>
-                    <p>Left Player:</p>
-                    <p>Score:</p>
-                    <div class="btn-shelf">
-                        <button class="btn btn-lg btn-block btn-info"><i class="glyphicon glyphicon-plus"></i></button>
-                    </div>
+        <div id="CurrentGameContainer" ng-show="homeCtrl.currentGame">
+            <div class="row">
+                <div class="col-sm-12">
+                    <h1 class="text-right">{{homeCtrl.gameTime.minutes| numberFixedLen:2}}:{{homeCtrl.gameTime.seconds | numberFixedLen:2}} <small>Game Clock</small></h1>
                 </div>
             </div>
-            <div class="col-sm-6">
-                <div class="well">
-                    <span class="label label-success pull-right hidden">S</span>
-                    <p>Right Player:</p>
-                    <p>Score:</p>
-                    <div class="btn-shelf">
-                        <button class="btn btn-lg btn-block btn-info"><i class="glyphicon glyphicon-plus"></i></button>
+            <div class="row">
+                <div class="col-sm-6">
+                    <div class="well">
+                        <span class="label label-success pull-right">S</span>
+                        <p>Left Player:</p>
+                        <p>Score:</p>
+                        <div class="btn-shelf">
+                            <button class="btn btn-lg btn-block btn-info"><i class="glyphicon glyphicon-plus"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6">
+                    <div class="well">
+                        <span class="label label-success pull-right hidden">S</span>
+                        <p>Right Player:</p>
+                        <p>Score:</p>
+                        <div class="btn-shelf">
+                            <button class="btn btn-lg btn-block btn-info"><i class="glyphicon glyphicon-plus"></i>
+                            </button>
+                        </div>
                     </div>
                 </div>
             </div>

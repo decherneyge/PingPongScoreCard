@@ -23,8 +23,11 @@ gulp.task('scripts:app', function(){
 
     var files = [
         global.config.src + '/index.js',
-        global.config.src + '/app/controllers/**/*.js',
-        global.config.src + '/app/directives/**/*.js'
+        global.config.src + '/app/filters/**/*.js',
+        global.config.src + '/app/services/**/*.js',
+        global.config.src + '/app/directives/**/*.js',
+        global.config.src + '/app/controllers/**/*.js'
+
     ];
 
     return gulp.src(files)
